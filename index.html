@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Fresh</title>
+</head>
+<link rel="stylesheet" href="css/styles.css">
+<body>
+  <ul id="recipesList"></ul>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="components/js/recipes.js"></script>
+<script src="components/js/users.js"></script>
+<script src="vendor/handlebars.js"></script>
+<script src="http://localhost:35729/livereload.js">
+</script>
+<script id="recipe-tmp" type="text/template">
+  <div>Calories: {{calories}}</div>
+  <div>Carbos: {{carbos}}</div>
+  <div>Card: {{card}}</div>
+  <div>Country: {{country}}</div>
+  <div>Country: {{country}}</div>
+  //an array
+  <div>Deliverable Ingredients: {{deliverable_ingredients}}</div>
+  <div>Difficulty: {{difficulty}}</div>
+  <div>Fats: {{fats}}</div>
+  <div>Favorites: {{favorites}}</div>
+  <div>Fibers: {{fibers}}</div>
+  <div>Headline: {{headline}}</div>
+  <div>id: {{id}}</div>
+  //or you can use thumb
+  <img src={{image}} alt={{headline}}>
+  <div>Highlighted: {{highlighted}}</div>
+  <div>Incompatibilities: {{incompatibilities}}</div>
+  <div>Ingredients: {{ingredients}}</div>
+  <div>Keywords: {{keywords}}</div>
+  <div>Name: {{name}}</div>
+  <div>Products: {{products}}</div>
+  <div>Proteins: {{proteins}}</div>
+  <div>Rating: {{rating}}</div>
+  <div>Rating: {{rating}}</div>
+  <div>Time: {{time}}</div>
+  // and array
+  <div>undeliverable_ingredients: {{undeliverable_ingredients}}</div>
+  <div>weeks: {{weeks}}</div>
+  <br>
+</script>
+</html>
