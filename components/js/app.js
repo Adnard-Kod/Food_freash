@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-  var myRecipes = new Recipes;
+  myRecipes = new Recipes;
   myRecipes.load();
 
   var myApp = new App;
@@ -10,13 +10,19 @@ function App() {
   this.form = document.getElementById('signIn')
   this.email = document.getElementById('password')
   this.password = document.getElementById('email')
+  this.overlay = document.getElementById('overlay')
 }
 
 App.prototype = {
   start: function() {
     this.form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var x = this.signIn();
+      if (this.signIn() === true) {
+        this.desiplayRecipes();
+      } else {
+        // add Tooltip
+        $('body').append("you fucked up")
+      }
     }.bind(this), false)
   },
   signIn: function() {
@@ -25,6 +31,9 @@ App.prototype = {
       if(this.email.value === savedEmail && this.password.value === 'password') return true;
     };
   },
-
+  desiplayRecipes: function() {
+    myRecipes.appendRecipes();
+    this.overlay.style.display = 'none';
+  }
 };
 
