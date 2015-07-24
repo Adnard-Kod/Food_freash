@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
   myRecipes = new Recipes;
   myRecipes.load();
+  myRecipes.load();
 
   var myApp = new App;
   myApp.start();

@@ -1,14 +1,41 @@
-@import 'compass';
 @import 'variables';
 @import 'mixins';
 @import 'base';
 @import 'layout';
 @import 'layout';
-body {
-  color: red;
-  color: red;
+
+#overlay {
+  position: absolute;
+  background-color: rgba(0,0,0,0.7);
+  cursor: pointer;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+/*  change to add sign in ability
+*/
 }
 
-#moneky {
+#overlay form {
+  width: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+}
 
+#overlay input {
+  display: block;
+  margin-top: 50px;  
+}
+
+.like {
+  outline: 5px solid pink;
+}
+
+.userRate {
+  /*dont add padding or margin because of the js*/
+  
+  outline: 2px solid pink;
+  width: 105px
 }

@@ -1,14 +1,14 @@
 #overlay {
   position: absolute;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
   top: 0;
   width: 100%;
   height: 100%;
   z-index: 1000;
   display: none;
-/*  change to add sign in ability
-*/
+  /*  change to add sign in ability
+  */
 }
 
 #overlay form {
@@ -20,7 +20,7 @@
 
 #overlay input {
   display: block;
-  margin-top: 50px;  
+  margin-top: 50px;
 }
 
 .like {
@@ -29,7 +29,6 @@
 
 .userRate {
   /*dont add padding or margin because of the js*/
-  
   outline: 2px solid pink;
-  width: 105px
+  width: 105px;
 }
