@@ -30,17 +30,17 @@
 <script src="http://localhost:35729/livereload.js">
 </script>
 <script id="recipe-tmp" type="text/template">
-  <article class="recipe-container active">
+  <article class="recipe-container">
     <header class="intro">
       <h2>{{name}}</h2>
-      <p>{{headline}}</p>
+      <p><b>Difficulty: {{difficulty}}</b> <b>Rating: {{rating}}</b></p>
       <figure class="recipe-image">
         <img src={{image}} alt={{headline}}>
       </figure>
     </header>
     <div class="content">
       <section class="description">
-        <p>{{description}}</p>
+        <p>{{description}} <span><button id={{id}} class="check">Favorite</button></span></p>
       </section>
       <section class="nutrition">
       </section>
@@ -66,10 +66,8 @@
           <li><b>Proteins:</b> {{proteins}}</li>
         </ul>
       </section>
-      <section>
-        <p><b>Difficulty: {{difficulty}}</b></p>
-        <p><b>Rating: {{rating}}</b></p>
-        <button id={{id}} class="check">Favorite</button>
+    </div>
+      <footer>
         <p><b>rate below...</b></p>
         <div id={{id}} class="userRate">
           <input class="rate" name="1" type="checkbox">
@@ -77,8 +75,8 @@
           <input class="rate" name="3" type="checkbox">
           <input class="rate" name="4" type="checkbox">
           <input class="rate" name="5" type="checkbox">
-      </section>
-    </div>
+      </footer>
   </article>
+  <div class="clear-fix"></div>
 </script>
 </html>
