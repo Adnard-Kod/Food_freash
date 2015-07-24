@@ -1,0 +1,115 @@
+// mobile
+.recipe-container {
+  outline: 2px solid pink;
+  .intro {
+    h2 {
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+    p {
+      margin: 0;
+      margin-left: 3%;
+    }
+    .recipe-image {
+      margin-right: auto;
+      margin-left: auto;
+      overflow: hidden;
+      img {
+        width: 100%;
+        // &:hover {
+        //   outline: 8px solid $dark-color; 
+        // }
+      }
+    }
+  }
+  .content {
+    outline: 2px solid pink;
+    padding: 5%;
+    padding-top: 2%;
+    ul li {
+      margin-left: 2%;
+    }
+  }
+}
+
+// desktop
+@media screen and (min-width: $break-point-large) {
+  .recipe-container {
+    .intro {
+      outline: 2px solid pink;
+      h2 {
+        font-size: 2em;
+        margin-bottom: 5px;
+      }
+      p {
+        margin-left: 0;
+      }
+      .recipe-image {
+        width: 55.5555%; //500/900
+        margin-right: auto;
+        margin-left: auto;
+        overflow: hidden;
+        float: left;
+        img {
+          outline: 2px solid black;
+          width: 100%;
+        }
+      }
+    }
+    .content {
+      width: 44.4444%; //400/900
+      float: right;
+      padding: 0;
+      .description p {
+        padding: 4%;//20/400
+        padding-bottom: 0;
+      }
+      h3 {
+        padding-left: 3%;
+        margin: 0;
+        font-size: .9em
+      }
+
+      ul {
+        padding: 4%;
+      clear: both;
+      }
+      ul li {
+        float: left;
+      }
+      p {
+        padding-left: 2%;
+      }
+    }
+  }
+
+  .recipe-container.active {
+    width: 20%;
+    float: left;
+    padding: 2%;
+    display: inline;
+    .intro {
+      h2 {
+        display: none
+      }
+      p {
+        display: none;
+      }
+      .recipe-image {
+        width: 100%; //500/900
+        margin-right: auto;
+        margin-left: auto;
+        overflow: hidden;
+        float: left;
+        img {
+          outline: 2px solid black;
+          width: 100%;
+        }
+      }
+    }
+    .content {
+      display: none;
+    }
+  }
+}
+

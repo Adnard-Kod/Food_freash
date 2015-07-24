@@ -48,7 +48,7 @@ Recipes.prototype =  {
   toggleFavorite: function(target) {
     if(target.className.includes('like')) {
       target.className = 'check';
-      target.innerText = 'favorite';
+      target.innerText = 'Favorite';
       // should be uncommented when hooked up to the backend
       // this.favorite(e);
     } else {
@@ -75,12 +75,11 @@ Recipes.prototype =  {
     var target = parseInt(e.target.name)
     var checkboxes = e.target.parentNode.children
     this.resetRate(checkboxes);
-    this.setRate(checkboxes);
+    this.setRate(checkboxes, target);
     // this method below would be uncommented and run to save the users rate of a recipe
     // this.saveRate(e.target.id);
-
   },
-  setRate: function(checkboxes) {
+  setRate: function(checkboxes, target) {
     for (var i = 0; i < target; i++) {
       checkboxes[i].checked = true;
     };
