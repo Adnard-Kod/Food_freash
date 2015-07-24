@@ -41,23 +41,14 @@
 </script>
 <script id="recipe-tmp" type="text/template">
   <article>
-    <div>
-      <figure class="recipe-image">
-        <img src={{image}} alt={{headline}}>
-      </figure>
-      <div class="rate"></div>
-      <div class="favorite">
-        <button class="check">Favorite</button>
-        <!-- <div id={{id}}></div> -->
-      </div>
-    </div>
-  <article class="recipe-container">
     <header class="intro">
       <h2>{{name}}</h2>
       <p>{{headline}}</p>
-      <p>Difficulty: {{difficulty}}</p>
-      <p>Rating: {{rating}}</p>
     </header>
+    <figure class="recipe-image">
+      <img src={{image}} alt={{headline}}>
+      </figure>
+  <article class="recipe-container">
     <div class="content">
       <section class="description">
         <p>{{description}}</p>
@@ -83,6 +74,15 @@
             <li>{{this}}</li>
           {{/each}}
         </ul>
+      </section>
+      <section>
+        <p>Difficulty: {{difficulty}}</p>
+        <p>Rating: {{rating}}</p>
+        <div class="rate"></div>
+        <div class="favorite">
+          <button class="check">Favorite</button>
+          <!-- <div id={{id}}></div> -->
+        </div>
       </section>
     </div>
   </article>
