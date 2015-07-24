@@ -58,7 +58,7 @@ Recipes.prototype =  {
       // this.favorite(e);
     }
   },
-    // this methods would send an ajaxs call that would talk to server and toggle the favorite value that needs to be saved in order to have it reflected on reload.
+  // this methods would send an ajaxs call that would talk to server and toggle the favorite value that needs to be saved in order to have it reflected on reload.
   savFavorite: function(e) {
     var request = new XMLHttpRequest();
     var id = e.target.id;
@@ -74,13 +74,18 @@ Recipes.prototype =  {
   rate: function(e) {
     var target = parseInt(e.target.name)
     var checkboxes = e.target.parentNode.children
-    this.resetCheckBoxes(checkboxes)
-    this.saveRate(e.target.id)
+    this.resetRate(checkboxes);
+    this.setRate(checkboxes);
+    // this method below would be uncommented and run to save the users rate of a recipe
+    // this.saveRate(e.target.id);
+
+  },
+  setRate: function(checkboxes) {
     for (var i = 0; i < target; i++) {
       checkboxes[i].checked = true;
     };
   },
-  resetCheckBoxes: function(checkboxes) {
+  resetRate: function(checkboxes) {
     for (var i = 0; i < checkboxes.length; i++) {
       checkboxes[i].checked = false;
     };
