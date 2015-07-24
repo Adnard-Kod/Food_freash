@@ -41,44 +41,28 @@ Recipes.prototype =  {
   },
   toggleFavorite: function(target) {
     if(target.className.includes('like')) {
-      // added these lines for the visual effect of favoriting
       target.className = 'check'
       target.innerText = 'favorite'
       // should be uncommented when hooked up to the backend
       // this.favorite(e);
     } else {
-      // added these lines for the visual effect of favoriting
       target.className = 'like check'
       target.innerText = 'unFavorite'
       // should be uncommented when hooked up to the backend
-      // this.unfavorite();
-    },
-    // these two methods would be run to update the backend I would send it to an controller action that would change the value of favorite to true of false or vice versa
-    favorite: function(e) {
-      var request = new XMLHttpRequest();
-      var id = e.target.nextElementSibling
-      request.open('POST', '/recipes/' + id + '/favorite');
-      request.onreadystatechange = function() {
-        if (request.readyState === 4 && request.status === 200) {
-          target.className = 'check'
-          target.innerText = 'favorite'
-        } else {
-          console.log( "HTTP error "+ request.status+" "+ request.statusText )
-        }
-      }.bind(this)
-    },
-    unfavorite:function(e) {
-      var id = e.target.nextElementSibling
-      var request = new XMLHttpRequest();
-      request.open('GET', '/recipes/' + id + '/favorite');
-      request.onreadystatechange = function() {
-        if (request.readyState === 4 && request.status === 200) {
-          target.className = 'like check'
-          target.innerText = 'unFavorite'
-        } else {
-          console.log( "HTTP error "+ request.status+" "+ request.statusText )
-        }
-      }.bind(this)
+      // this.favorite(e);
+    }
+  },
+    // this methods would send an ajaxs call that would talk to server and toggle the favorite value that needs to be saved in order to have it reflected on reload.
+  favorite: function(e) {
+    var request = new XMLHttpRequest();
+    var id = e.target.nextElementSibling.id
+    request.open('POST', '/recipes/' + id + '/favorite');
+    request.onreadystatechange = function() {
+      if (request.readyState === 4 && request.status === 200) {
+        console.log( "success" )
+      } else {
+        console.log( "HTTP error "+ request.status+" "+ request.statusText )
+      }
     }
   }
-};
+}
