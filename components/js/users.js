@@ -7,7 +7,7 @@
     parse: function(recipes) {
       var parsedUsers = new Array();
       for (var i = recipes.length - 1; i >= 0; i--) {
-        parsedUsers.push(recipes[i].user)
+        parsedUsers.push(recipes[i].user);
       };
     this.users = parsedUsers;
     }

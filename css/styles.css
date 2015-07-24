@@ -26,3 +26,10 @@
 .like {
   outline: 5px solid pink;
 }
+
+.userRate {
+  /*dont add padding or margin because of the js*/
+  
+  outline: 2px solid pink;
+  width: 105px
+}

@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 function App() {
-  this.form = document.getElementById('signIn')
-  this.email = document.getElementById('password')
-  this.password = document.getElementById('email')
-  this.overlay = document.getElementById('overlay')
+  this.form = document.getElementById('signIn');
+  this.email = document.getElementById('password');
+  this.password = document.getElementById('email');
+  this.overlay = document.getElementById('overlay');
 }
 
 App.prototype = {
@@ -21,9 +21,9 @@ App.prototype = {
         this.desiplayRecipes();
       } else {
         // add Tooltip
-        $('body').append("you fucked up")
+        $('body').append("you fucked up");
       }
-    }.bind(this), false)
+    }.bind(this), false);
   },
   signIn: function() {
     for (var i = myUsers.users.length - 1; i >= 0; i--) {
