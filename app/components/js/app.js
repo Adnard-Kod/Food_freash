@@ -20,8 +20,7 @@ App.prototype = {
       if (this.signIn() === true) {
         this.desiplayRecipes();
       } else {
-        // add Tooltip
-        $('body').append("you fucked up");
+        $('body').append("<h1>Worng Password<h1>");
       }
     }.bind(this), false);
   },

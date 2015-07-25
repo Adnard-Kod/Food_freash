@@ -50,16 +50,16 @@ Recipes.prototype =  {
       target.className = 'check';
       target.innerText = 'Favorite';
       // should be uncommented when hooked up to the backend
-      // this.favorite(e);
+      // this.saveFavorite(e);
     } else {
       target.className = 'like check';
       target.innerText = 'unFavorite';
       // should be uncommented when hooked up to the backend
-      // this.favorite(e);
+      // this.saveFavorite(e);
     }
   },
   // this methods would send an ajaxs call that would talk to server and toggle the favorite value that needs to be saved in order to have it reflected on reload.
-  savFavorite: function(e) {
+  saveFavorite: function(e) {
     var request = new XMLHttpRequest();
     var id = e.target.id;
     request.open('POST', '/recipes/' + id + '/favorite');
