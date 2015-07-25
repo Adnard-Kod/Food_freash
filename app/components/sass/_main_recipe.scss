@@ -2,7 +2,7 @@
 .recipe-container {
   .intro {
     h2 {
-      font-size: 1.1em;
+      font-size: 1.5em;
       margin-bottom: 5px;
     }
     .recipe-image {
@@ -15,7 +15,7 @@
         outline: 8px solid $dark-color;
       }
       img {
-        height: 100%;
+        width: 100%;
         float: left;
       }
     }

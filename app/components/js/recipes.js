@@ -14,7 +14,7 @@ Recipes.prototype =  {
         myUsers = new Users;
         myUsers.parse(this.recipes);
         // change to add sign in
-        this.appendRecipes();
+        // this.appendRecipes();
       } else {
         console.log( "HTTP error "+ request.status+" "+ request.statusText );
       }
