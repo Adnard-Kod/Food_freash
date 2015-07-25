@@ -3,6 +3,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     uglify: {
       my_target: {
         files: {
@@ -14,12 +15,17 @@ module.exports = function (grunt) {
       dev: {
         options: {
           style: 'compressed',
-          files: {
-            'app/css/stlyes.css': 'app/components/sass/styles.scss'
-          }
-        }
+          sourcemap: 'none',
+        },// options
+        files:  [{
+          expand: true,
+          cwd: 'app/components/sass',
+          src: ['**/*.scss'],
+          dest: 'app/css',
+          ext: '.css'
+        }]
       }
-    },//compass
+    },//sass
     watch: {
       options: { livereload: true },
       scripts: {
