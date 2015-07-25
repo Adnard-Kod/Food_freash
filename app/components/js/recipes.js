@@ -13,8 +13,6 @@ Recipes.prototype =  {
         this.recipes = JSON.parse(request.responseText);
         myUsers = new Users;
         myUsers.parse(this.recipes);
-        // change to add sign in
-        // this.appendRecipes();
       } else {
         console.log( "HTTP error "+ request.status+" "+ request.statusText );
       }
@@ -25,6 +23,7 @@ Recipes.prototype =  {
     this.recipesList.addEventListener('click', 
       function(e) {
       if(e.target.className.includes('check')){
+        e.preventDefault();
         this.toggleFavorite(e.target);
       }
     }.bind(this), false);
@@ -70,6 +69,7 @@ Recipes.prototype =  {
         console.log( "HTTP error "+ request.status+" "+ request.statusText );
       }
     }
+    request.send();
   },
   rate: function(e) {
     var target = parseInt(e.target.name)
@@ -77,7 +77,7 @@ Recipes.prototype =  {
     this.resetRate(checkboxes);
     this.setRate(checkboxes, target);
     // this method below would be uncommented and run to save the users rate of a recipe
-    // this.saveRate(e.target.id);
+    // this.saveRate(target);
   },
   setRate: function(checkboxes, target) {
     for (var i = 0; i < target; i++) {
@@ -89,10 +89,10 @@ Recipes.prototype =  {
       checkboxes[i].checked = false;
     };
   },
-  saveRate: function(id) {
+  saveRate: function(target) {
     var request = new XMLHttpRequest();
-    var id = e.target.nextElementSibling.id;
-    request.open('POST', '/recipes/' + id + '/rate');
+    var data = { 'id': target.nextElementSibling.id, 'rate': target}
+    request.open('POST', '/recipes/rate');
     request.onreadystatechange = function() {
       if (request.readyState === 4 && request.status === 200) {
         console.log( "success" );
@@ -100,5 +100,6 @@ Recipes.prototype =  {
         console.log( "HTTP error "+ request.status+" "+ request.statusText );
       }
     }
+    request.send(data);
   }
 }

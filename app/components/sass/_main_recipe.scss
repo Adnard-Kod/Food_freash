@@ -1,3 +1,8 @@
+.check {
+  text-decoration: none;
+  @include sign_in($light-color);
+  height: 20px;
+}
 // mobile
 .recipe-container {
   .intro {
