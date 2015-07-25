@@ -57,7 +57,7 @@ Recipes.prototype =  {
       // this.saveFavorite(e);
     }
   },
-  // this methods would send an ajaxs call that would talk to server and toggle the favorite value that needs to be saved in order to have it reflected on reload.
+  // this methods would send an ajaxs call that would talk to server and toggle the favorite value true or false that needs to be saved in order to have it reflected on reload.
   saveFavorite: function(e) {
     var request = new XMLHttpRequest();
     var id = e.target.id;
@@ -66,7 +66,7 @@ Recipes.prototype =  {
       if (request.readyState === 4 && request.status === 200) {
         console.log( "success" );
       } else {
-        console.log( "HTTP error "+ request.status+" "+ request.statusText );
+        console.log( "HTTP error " + request.status + " "+ request.statusText );
       }
     }
     request.send();
